@@ -11,5 +11,5 @@
 # Canvas-specific .results.json
 .results.json
 
-/config/database.yml
-config/database.yml
+# /config/database.yml
+# config/database.yml
