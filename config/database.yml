@@ -2,22 +2,27 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-
-development:
-  <<: *default
-  database: money_talks_development
-
-test:
-  <<: *default
-  database: money_talks_test
-
-production:
-  <<: *default
-  adapter: postgresql
   host: <%= ENV["DB_HOST"] %>
   port: 5432
   username: <%= ENV["DB_USERNAME"] %>
   password: <%= ENV["DB_PASSWORD"] %>
   database: <%= ENV["DB_DATABASE"] %>
+
+development:
+  <<: *default
+  # database: money_talks_development
+
+test:
+  <<: *default
+  # database: money_talks_test
+
+production:
+  <<: *default
+  adapter: postgresql
+  # host: <%= ENV["DB_HOST"] %>
+  # port: 5432
+  # username: <%= ENV["DB_USERNAME"] %>
+  # password: <%= ENV["DB_PASSWORD"] %>
+  # database: <%= ENV["DB_DATABASE"] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
